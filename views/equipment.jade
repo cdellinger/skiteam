@@ -1,0 +1,20 @@
+extends layout
+
+block content
+	style.
+		body{background: url(/images/sugarteam.jpg) no-repeat center center fixed;background-size:cover;}
+
+	.panel-faq
+		h2 Equipment - Frequently Asked Questions
+		ul
+		- each element, x in faqs
+			li
+				a(href='#') #{faqs[x].question}
+
+
+	- each element, x in faqs
+		.panel-faq
+			h2 #{faqs[x].question}
+			p!= faqs[x].answer
+
+

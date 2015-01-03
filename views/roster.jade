@@ -1,0 +1,18 @@
+extends layout
+
+block content
+
+	.panel-faq
+		h2 2014-2015 Team
+		br
+		br
+		- each element, x in members
+			- if ((x % 4) == 0)
+				.row
+					- each elementInRow, y in members.slice(x, x+4)
+						.col-md-3
+							.media.player-card.panel2
+								a(href='#')
+									img.media-object.avatar(src='#{members[x+y].avatar}')
+							.media-body
+								h2.media-heading.text-center #{members[x+y].name}

@@ -1,0 +1,20 @@
+extends layout
+
+block content
+
+	.row
+		.col-md-8
+			- each element, y in blogEntries
+				.panel-faq.blog-panel
+					h2 #{blogEntries[y].title} - #{blogEntries[y].posted_on}
+					p!= blogEntries[y].content
+
+		.col-md-4
+			.panel-faq
+				h2 Upcoming Events
+				ul
+				- each element, x in events
+					li
+						a(href='#') #{events[x].occurs_on} - #{events[x].title}
+
+
